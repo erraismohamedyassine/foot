@@ -1,0 +1,16 @@
+app:
+    resource: '@AppBundle/Controller/DefaultController.php'
+    type: annotation
+
+acheteurs:
+    type:     rest
+    resource: AppBundle\Controller\AcheteurController
+players:
+    type:     rest
+    resource: AppBundle\Controller\PlayerController
+equipes:
+    type:     rest
+    resource: AppBundle\Controller\EquipesController
+propositions:
+    type:     rest
+    resource: AppBundle\Controller\PropositionsController

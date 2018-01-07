@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Player
+ *
+ * @ORM\Table(name="player")
+ * @ORM\Entity
+ */
+class Player
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=15, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=15, nullable=false)
+     */
+    private $prenom;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prix_player", type="integer", nullable=false)
+     */
+    private $prixPlayer;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+

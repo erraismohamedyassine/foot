@@ -1,0 +1,53 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Propositions
+ *
+ * @ORM\Table(name="propositions", indexes={@ORM\Index(name="id_p", columns={"id_player"}), @ORM\Index(name="id_a", columns={"id_acheteur"})})
+ * @ORM\Entity
+ */
+class Propositions
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="proposition_prix", type="integer", nullable=false)
+     */
+    private $propositionPrix;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Acheteur
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Acheteur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_acheteur", referencedColumnName="id")
+     * })
+     */
+    private $idAcheteur;
+
+    /**
+     * @var \AppBundle\Entity\Player
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Player")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_player", referencedColumnName="id")
+     * })
+     */
+    private $idPlayer;
+
+
+}
+
